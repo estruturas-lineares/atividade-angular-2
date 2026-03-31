@@ -1,0 +1,16 @@
+<div>
+  <p>{{ quantity() }}</p>
+  <p>{{ eventName() }}</p>
+  <input type="text" placeholder="desconto" (keyup.enter)="discount($event)" />
+  <button (click)="increment()">
+    <p>+</p>
+  </button>
+
+  <button (click)="decrement()">
+    <p>-</p>
+  </button>
+
+  <button (click)="showCanceled()">
+    <p>Solicitar cancelamento</p>
+  </button>
+</div>

@@ -1,0 +1,9 @@
+<div>
+  <app-ticket-item
+    [eventName]="'Competicao bolinha'"
+    [(quantity)]="parentQuantity"
+    (cancel)="isCanceled($event)"
+  />
+  <p>status: {{ status() }}</p>
+  <p>Valor total: R$ {{ parentQuantity() * 150 }}</p>
+</div>
