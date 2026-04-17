@@ -1,4 +1,5 @@
 import { Component, input, model, output, signal } from '@angular/core';
+import { Ticket } from '../mock';
 
 @Component({
   selector: 'app-ticket-item',
@@ -10,6 +11,7 @@ export class TicketItem {
   eventName = input.required<string>();
   quantity = model(1);
   cancel = output<string>();
+  confirm = output<void>();
   discountValue = signal(0);
 
   increment() {
@@ -22,6 +24,10 @@ export class TicketItem {
 
   showCanceled() {
     this.cancel.emit('Soliticação cancelada');
+  }
+
+  confirmTicket() {
+    this.confirm.emit();
   }
 
   discount(event: Event) {

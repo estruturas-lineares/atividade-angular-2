@@ -1,0 +1,105 @@
+.container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+}
+
+/* checkout */
+
+.checkout {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.status {
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* lista de tickets */
+
+.tickets ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.ticket-card {
+  background: white;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  padding: 16px;
+  transition: 0.2s;
+}
+
+.ticket-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* header */
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-header h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* descrição */
+
+.description {
+  margin: 10px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* footer */
+
+.ticket-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+/* badges */
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vip {
+  background: #ffe8a3;
+  color: #7a5200;
+}
+
+.meia {
+  background: #ffd6d6;
+  color: #7a0000;
+}
+
+.standard {
+  background: #d6e4ff;
+  color: #003a8c;
+}

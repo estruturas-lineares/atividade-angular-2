@@ -1,16 +1,18 @@
-<div>
-  <p>{{ quantity() }}</p>
-  <p>{{ eventName() }}</p>
-  <input type="text" placeholder="desconto" (keyup.enter)="discount($event)" />
-  <button (click)="increment()">
-    <p>+</p>
-  </button>
+<div class="ticket-control">
+  <h2 class="event-name">{{ eventName() }}</h2>
 
-  <button (click)="decrement()">
-    <p>-</p>
-  </button>
+  <div class="quantity">
+    <button class="qty-btn" (click)="decrement()">−</button>
 
-  <button (click)="showCanceled()">
-    <p>Solicitar cancelamento</p>
-  </button>
+    <span class="qty-value">{{ quantity() }}</span>
+
+    <button class="qty-btn" (click)="increment()">+</button>
+  </div>
+
+  <div class="discount">
+    <input type="text" placeholder="Código de desconto" (keyup.enter)="discount($event)" />
+  </div>
+
+  <button class="confirm-btn" (click)="confirmTicket()">Confirmar</button>
+  <button class="cancel-btn" (click)="showCanceled()">Solicitar cancelamento</button>
 </div>

@@ -1,9 +1,56 @@
-<div>
-  <app-ticket-item
-    [eventName]="'Competicao bolinha'"
-    [(quantity)]="parentQuantity"
-    (cancel)="isCanceled($event)"
-  />
-  <p>status: {{ status() }}</p>
-  <p>Valor total: R$ {{ parentQuantity() * 150 }}</p>
+<div class="container">
+  <section class="checkout">
+    <app-ticket-item
+      [eventName]="'Competicao bolinha'"
+      [(quantity)]="parentQuantity"
+      (cancel)="isCanceled($event)"
+      (confirm)="addTicket()"
+      ;
+    />
+
+    <p class="status">Status: {{ status() }}</p>
+    <p class="total">Valor total: R$ {{ parentQuantity() * 150 }}</p>
+  </section>
+
+  <aside class="tickets">
+    <ul>
+      @for (ticket of tickets(); track ticket.id) {
+        <li class="ticket-card">
+          <div class="ticket-header">
+            <h3>{{ ticket.name }}</h3>
+
+            <span class="badge" [ngClass]="ticket.type">
+              @switch (ticket.type) {
+                @case ('vip') {
+                  VIP - Acesso total
+                }
+                @case ('meia') {
+                  MEIA - Obrigatório carteirinha
+                }
+                @default {
+                  STANDARD - Acesso padrão
+                }
+              }
+            </span>
+          </div>
+
+          <p class="description">
+            {{ ticket.description | resumo }}
+          </p>
+
+          <div class="ticket-footer">
+            <span class="price">
+              {{ ticket.price | currency: 'BRL' }}
+            </span>
+
+            <span class="date">
+              {{ ticket.data | date: 'dd/MM/yyyy HH:mm' }}
+            </span>
+          </div>
+        </li>
+      } @empty {
+        <li class="empty">Nenhum ingresso disponível</li>
+      }
+    </ul>
+  </aside>
 </div>
