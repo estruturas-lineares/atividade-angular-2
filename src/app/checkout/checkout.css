@@ -103,3 +103,12 @@
   background: #d6e4ff;
   color: #003a8c;
 }
+.gift {
+  margin-top: 12px;
+  background: #e6fcf5;
+  color: #087f5b;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}

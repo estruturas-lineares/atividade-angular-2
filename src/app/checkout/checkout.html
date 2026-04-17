@@ -10,6 +10,10 @@
 
     <p class="status">Status: {{ status() }}</p>
     <p class="total">Valor total: R$ {{ parentQuantity() * 150 }}</p>
+
+    @if (tickets().length > 2) {
+      <div class="gift">🎁 Você ganhou um brinde!</div>
+    }
   </section>
 
   <aside class="tickets">
