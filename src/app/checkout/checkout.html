@@ -19,7 +19,12 @@
   <aside class="tickets">
     <ul>
       @for (ticket of tickets(); track ticket.id) {
-        <li class="ticket-card">
+        <li
+          class="ticket-card"
+          [ngClass]="{
+            'ingresso-destaque': ticket.type == 'vip',
+          }"
+        >
           <div class="ticket-header">
             <h3>{{ ticket.name }}</h3>
 
@@ -50,6 +55,14 @@
             <span class="date">
               {{ ticket.data | date: 'dd/MM/yyyy HH:mm' }}
             </span>
+          </div>
+
+          <div class="lotacao">
+            <div
+              class="barra"
+              [style.width.%]="ticket.lotePercentual"
+              [style.backgroundColor]="ticket.lotePercentual < 20 ? 'red' : 'green'"
+            ></div>
           </div>
         </li>
       } @empty {

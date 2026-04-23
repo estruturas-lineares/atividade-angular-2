@@ -2,9 +2,10 @@ export type Ticket = {
   id: string;
   name: string;
   type: 'vip' | 'standard' | 'meia';
-  data: Date;
   price: number;
   description: string;
+  data: Date;
+  lotePercentual: number;
 };
 
 export const TICKETS_MOCK: Ticket[] = [
@@ -15,5 +16,6 @@ export const TICKETS_MOCK: Ticket[] = [
     data: new Date('2026-08-10T20:00:00'),
     price: 450,
     description: 'Acesso VIP com área exclusiva, open bar e entrada antecipada.',
+    lotePercentual: 75,
   },
 ];

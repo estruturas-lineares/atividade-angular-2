@@ -1,0 +1,7 @@
+h2 {
+  color: var(--card-title-color, black);
+}
+
+app-card {
+  --card-title-color: purple;
+}

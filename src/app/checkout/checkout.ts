@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { TicketItem } from '../ticket-item/ticket-item';
-import { Ticket, TICKETS_MOCK } from '../mock';
+import { TICKETS_MOCK, Ticket } from '../mock';
 import { CurrencyPipe, DatePipe, NgClass } from '@angular/common';
 import { TruncatePipe } from '../resumo-pipe';
 
@@ -27,6 +27,7 @@ export class Checkout {
       data: new Date(),
       price: 150,
       description: 'Ingresso gerado pela compra no checkout.',
+      lotePercentual: 10,
     };
 
     this.tickets.update((rest) => [...rest, newTicket]);
